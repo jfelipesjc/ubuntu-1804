@@ -45,7 +45,7 @@ WORDPRESS="https://wordpress.org/latest.zip"
 #
 # Declarando as variaveis para criação da Base de Dados do Wordpress
 USER="root"
-PASSWORD="pti@2018"
+PASSWORD="123456"
 # opção do comando create: create (criação), database (base de dados), base (banco de dados)
 # opção do comando create: create (criação), user (usuário), identified by (indentificado por - senha do usuário), password (senha)
 # opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas), to (para), user (usário)
