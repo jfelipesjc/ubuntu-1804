@@ -153,9 +153,9 @@ echo -e "Copiando os arquivos de configuração do Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v wordpress/ /var/www/aliempregos_com &>> $LOG
-	cp -v conf/htaccess /var/www/aliempregos_com/.htaccess &>> $LOG
-	cp -v conf/wp-config.php /var/www/aliempregos_com/ &>> $LOG
+	mv -v wordpress/ /var/www/html/aliempregos_com &>> $LOG
+	cp -v conf/htaccess /var/www/html/aliempregos_com/.htaccess &>> $LOG
+	cp -v conf/wp-config.php /var/www/html/aliempregos_com/ &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script..."
 sleep 5
 echo
@@ -164,8 +164,8 @@ echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguar
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -R (recursive), -f (silent), -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
 	# opção do comando chown: -R (recursive), -f (silent), -v (verbose), dono.grupo (alteraçaõ do dono e grupo)
-	chmod -Rfv 755 /var/www/aliempregos_com/ &>> $LOG
-	chown -Rfv www-data.www-data /var/www/aliempregos_com/ &>> $LOG
+	chmod -Rfv 755 /var/www/html/aliempregos_com/ &>> $LOG
+	chown -Rfv www-data.www-data /var/www/html/aliempregos_com/ &>> $LOG
 echo -e "Permissões alteradas com sucesso!!!, continuando com o script..."
 sleep 5
 echo
@@ -192,7 +192,7 @@ echo -e "Editando o arquivo de configuração da Base de Dados do Wordpress, agu
 		# opção do comando sleep: 3 (seconds)
 		read
 		sleep 3
-	vim /var/www/aliempregos_com/wp-config.php
+	vim /var/www/html/aliempregos_com/wp-config.php
 echo -e "Arquivo editado com sucesso!!!, continuando com o script..."
 sleep 5
 echo
@@ -202,7 +202,7 @@ echo -e "Editando o arquivo de configuração do htaccess do Wordpress, aguarde.
 		# opção do comando sleep: 3 (seconds)
 		read
 		sleep 3
-	vim /var/www/aliempregos_com/.htaccess
+	vim /var/www/html/aliempregos_com/.htaccess
 echo -e "Arquivo editado com sucesso!!!, continuando com o script..."
 sleep 5
 echo
