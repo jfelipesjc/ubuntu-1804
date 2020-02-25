@@ -53,10 +53,10 @@ PASSWORD="123456"
 # opões do comando GRANT: grant (permissão), all (todos privilegios), on (em ou na | banco ou tabela), *.* (todos os bancos/tabelas)
 # to (para), user@'%' (usuário @ localhost), identified by (indentificado por - senha do usuário), password (senha)
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
-DATABASE="CREATE DATABASE aliempregos_com;"
-USERDATABASE="CREATE USER 'wordpress' IDENTIFIED BY 'aliempregos_com';"
-GRANTDATABASE="GRANT USAGE ON *.* TO 'wordpress' IDENTIFIED BY 'aliempregos_com';"
-GRANTALL="GRANT ALL PRIVILEGES ON wordpress.* TO 'aliempregos_com';"
+DATABASE="CREATE DATABASE sjcempregos_com_br;"
+USERDATABASE="CREATE USER 'wordpress' IDENTIFIED BY 'sjcempregos_com_br';"
+GRANTDATABASE="GRANT USAGE ON *.* TO 'wordpress' IDENTIFIED BY 'sjcempregos_com_br';"
+GRANTALL="GRANT ALL PRIVILEGES ON wordpress.* TO 'sjcempregos_com_br';"
 FLUSH="FLUSH PRIVILEGES;"
 #
 # Verificando se o usuário e Root, Distribuição e >=18.04 e o Kernel >=4.15 <IF MELHORADO)
@@ -96,7 +96,7 @@ echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
 clear
 #
 echo -e "Instalação do Wordpress no GNU/Linux Ubuntu Server 18.04.x\n"
-echo -e "Após a instalação do Wordpress acessar a URL: http://`hostname -I`/aliempregos_com/\n"
+echo -e "Após a instalação do Wordpress acessar a URL: http://`hostname -I`/sjcempregos_com_br/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet..."
 sleep 5
 echo
@@ -153,9 +153,9 @@ echo -e "Copiando os arquivos de configuração do Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v wordpress/ /var/www/html/aliempregos_com &>> $LOG
-	cp -v conf/htaccess /var/www/html/aliempregos_com/.htaccess &>> $LOG
-	cp -v conf/wp-config.php /var/www/html/aliempregos_com/ &>> $LOG
+	mv -v wordpress/ /var/www/html/sjcempregos_com_br &>> $LOG
+	cp -v conf/htaccess /var/www/html/sjcempregos_com_br/.htaccess &>> $LOG
+	cp -v conf/wp-config.php /var/www/html/sjcempregos_com_br/ &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script..."
 sleep 5
 echo
@@ -164,8 +164,8 @@ echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguar
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -R (recursive), -f (silent), -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
 	# opção do comando chown: -R (recursive), -f (silent), -v (verbose), dono.grupo (alteraçaõ do dono e grupo)
-	chmod -Rfv 755 /var/www/html/aliempregos_com/ &>> $LOG
-	chown -Rfv www-data.www-data /var/www/html/aliempregos_com/ &>> $LOG
+	chmod -Rfv 755 /var/www/html/sjcempregos_com_br/ &>> $LOG
+	chown -Rfv www-data.www-data /var/www/html/sjcempregos_com_br/ &>> $LOG
 echo -e "Permissões alteradas com sucesso!!!, continuando com o script..."
 sleep 5
 echo
@@ -192,7 +192,7 @@ echo -e "Editando o arquivo de configuração da Base de Dados do Wordpress, agu
 		# opção do comando sleep: 3 (seconds)
 		read
 		sleep 3
-	vim /var/www/html/aliempregos_com/wp-config.php
+	vim /var/www/html/sjcempregos_com_br/wp-config.php
 echo -e "Arquivo editado com sucesso!!!, continuando com o script..."
 sleep 5
 echo
@@ -202,7 +202,7 @@ echo -e "Editando o arquivo de configuração do htaccess do Wordpress, aguarde.
 		# opção do comando sleep: 3 (seconds)
 		read
 		sleep 3
-	vim /var/www/html/aliempregos_com/.htaccess
+	vim /var/www/html/sjcempregos_com_br/.htaccess
 echo -e "Arquivo editado com sucesso!!!, continuando com o script..."
 sleep 5
 echo
